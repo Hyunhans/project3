@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <i class="fa-solid fa-book-open">&nbsp</i>
   <br/>
-  <a class="navbar-brand" href="#">하루그림</a>
+  <a class="navbar-brand" href="http://127.0.0.1:8000/diary/">하루그림</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -129,13 +129,14 @@
 <!--    </div>&lt;!&ndash; /.row &ndash;&gt;-->
 <!--</main>-->
 <!--''' 앨범 코드 시작 '''-->
+{% for p in posts %}
 <section class="jumbotron text-center">
     <div class="container">
       <h1>Album example</h1>
       <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
       <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <a href="http://127.0.0.1:8000/diary/practice" class="btn btn-primary my-2">Main call to action</a>
+        <a href="http://127.0.0.1:8000/diary/practice_2/" class="btn btn-secondary my-2">Secondary action</a>
       </p>
     </div>
   </section>
@@ -152,10 +153,10 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" ><a href="http://127.0.0.1:8000/diary/1/">View</a></button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">{{post.created_at}}</small>
               </div>
             </div>
           </div>
@@ -244,7 +245,7 @@
 <br/>
 <br/>
 <br/>
-
+{% endfor %}
 <!--&lt;!&ndash;로그인 창&ndash;&gt;-->
 <!--        <link rel="apple-touch-icon" href="/docs/4.6/assets/img/favicons/apple-touch-icon.png" sizes="180x180">-->
 <!--<link rel="icon" href="/docs/4.6/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">-->

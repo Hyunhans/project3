@@ -23,6 +23,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("diary/", include('diary.urls')),
-    path("", RedirectView.as_view(url="/blog/", permanent=True))
+    path("", RedirectView.as_view(url="/diary/", permanent=True)),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
